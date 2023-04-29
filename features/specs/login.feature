@@ -1,3 +1,4 @@
+@login
 Feature: Login
 	# https://automation-sandbox-python-mpywqjbdza-uc.a.run.app
 	# ponto final na mensagem

@@ -1,6 +1,6 @@
+@invoice_details
 Feature: Invoice details
 	# https://automation-sandbox-python-mpywqjbdza-uc.a.run.app
-
 	# OBS.: Casas decimais
 
 	Background:
