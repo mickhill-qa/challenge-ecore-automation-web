@@ -27,3 +27,10 @@ Then('the application show the page Invoice List') do
   expect('Invoice List').to eql(@page_invoice_list.get_page_title)
   screenshot
 end
+
+# @login_exception_01
+Then('the application shows the message: {string}') do |message|
+  expect(page.current_url).to eql(@page_login.url)
+  expect(message).to eql(@page_login.get_error_message)
+  screenshot
+end

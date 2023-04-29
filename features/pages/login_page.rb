@@ -5,6 +5,7 @@ class LoginPage < SitePrism::Page
   element :input_username, 'input[name=username]'
   element :input_password, 'input[name=password]'
   element :btn_login, 'button[id=btnLogin]'
+  element :error_message, 'body .alert.alert-danger.mt-3'
 
   def fill_in_username(text)
     input_username.set text
@@ -16,5 +17,9 @@ class LoginPage < SitePrism::Page
 
   def click_btn_login
     btn_login.click
+  end
+
+  def get_error_message
+    error_message.text
   end
 end

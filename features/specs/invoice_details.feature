@@ -11,7 +11,7 @@ Feature: Invoice details
 		Then the application show the page Invoice List
 
 	@invoice_details_baseflow
-	Scenario: TC001 - Validate invoice details
+	Scenario: TC003 - Validate invoice details
 		Given to click the Invoice Details link for the first item presented in the screen
 		When the application shows the informations of the Invoice
 		And validation the Hotel Name: "Rendezvous Hotel"
