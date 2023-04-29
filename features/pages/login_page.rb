@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LoginPage < SitePrism::Page
-  set_url ''
+  set_url "#{BASE_URL}/"
   element :input_username, 'input[name=username]'
   element :input_password, 'input[name=password]'
   element :btn_login, 'button[id=btnLogin]'

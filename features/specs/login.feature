@@ -15,11 +15,11 @@ Feature: Login
 		When the following field Email: <Username>
 		And the following field Password: <Password>
 		And the click the button Login
-		Then the application shows the message: "Wrong username or password
+		Then the application shows the message: "Wrong username or password"
 
 		Examples:
 			| Username    | Password   |
 			| "Demouser"  | "abc123"   |
 			| "demouser_" | "xyz"      |
 			| "demouser"  | "nananana" |
-			| "demouser"  | "abc123 "  |
+			| "demouser"  | "abc123"   |
