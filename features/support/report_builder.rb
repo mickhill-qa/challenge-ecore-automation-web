@@ -8,7 +8,7 @@ at_exit do
     config.json_path = 'reports/report.json'
     config.report_path = "#{REPORT_PATH}#{data_de_execucao}_-_#{SELECTED_ENV}_web_#{SELECTED_BROWSER}"
     config.report_types = [:html]
-    config.report_title = 'poc-automation-ruby-capybara' # nome do report - <img src='#' />
+    config.report_title = 'challenge-ecore-automation-web' # nome do report - <img src='#' />
     config.color = 'green'
     config.compress_images = false
     config.include_images = true

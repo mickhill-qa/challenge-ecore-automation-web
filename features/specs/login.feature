@@ -1,6 +1,7 @@
 Feature: Login
 	# https://automation-sandbox-python-mpywqjbdza-uc.a.run.app
 
+	@login_baseflow
 	Scenario: TC001 - Login (Positive)
 		Given the main page loaded
 		When the following field Email: "demouser"
@@ -8,6 +9,7 @@ Feature: Login
 		And the click the button Login
 		Then the application show the page Invoice List
 
+	@login_execao_01
 	Scenario Outline: TC002 - Login (Negative)
 		Given the main page loaded
 		When the following field Email: <Username>
