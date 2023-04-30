@@ -1,0 +1,17 @@
+# local development in VScode:
+# bundle config set --local gemfile Gemfile.local
+
+# Include the regular Gemfile
+eval File.read('Gemfile')
+
+gem 'solargraph'
+gem 'rubocop'
+gem 'debase'
+gem 'ruby-debug-ide'
+gem 'rubycritic', require: false
+
+group :test do
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not mandatory, but highly recommended
+  gem 'database_cleaner'
+end

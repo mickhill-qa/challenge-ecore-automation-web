@@ -1,0 +1,8 @@
+dev:
+  base_url: ''
+
+qa:
+  base_url: 'https://automation-sandbox-python-mpywqjbdza-uc.a.run.app'
+
+prod:
+  base_url: ''
