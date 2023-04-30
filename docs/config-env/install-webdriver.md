@@ -1,4 +1,4 @@
-# Instalar WebDriver
+# Install WebDriver
 
 Open the **[ChormeDriver](https://chromedriver.chromium.org/downloads)** website and download the version according to your web browser.
 
