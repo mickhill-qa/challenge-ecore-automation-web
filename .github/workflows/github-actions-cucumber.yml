@@ -1,0 +1,42 @@
+# https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-ruby
+name: Cucumber
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+    tags:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure git repository
+        uses: actions/checkout@v3
+
+      - name: Configure Ruby 2.7
+        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '2.7'
+
+      - name: Configure WebDriver for Chrome
+        run:  |
+          apt list --installed
+          sudo apt purge google-chrome-stable
+          sudo apt purge chromium-browser
+          sudo apt install -y chromium-browser
+          pip install requests beautifulsoup4 pandas webdriver-manager selenium
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Run Cucumber Tests
+        run: cucumber -p ci_debug -p qa
