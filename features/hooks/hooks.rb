@@ -2,7 +2,6 @@
 
 ### Global ###
 # Before do
-#     log 'Inicio de todos os Cenarios.'
 # end
 
 After do |scenario|
@@ -11,10 +10,8 @@ After do |scenario|
 end
 
 ### Tag ###
-# Before '@pesquisaUndefined' do
-#     log 'Apenas no INICIO desse Cenarios'
+# Before '@myTag' do
 # end
 
-# After '@pesquisaUndefined' do
-#     log 'Apenas no FIM desse Cenarios'
+# After '@myTag' do
 # end

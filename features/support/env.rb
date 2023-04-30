@@ -17,31 +17,31 @@ require 'base64'
 World Capybara::DSL
 World Capybara::RSpecMatchers
 
-## Definiçoes de Ambiente
-# escolhido em cucumber.yml
+## Environment Settings
+# chosen in the cucumber.yml file
 # prod, dev, qa
 SELECTED_ENV = ENV['ENV']
 if SELECTED_ENV.blank?
-  raise "\nConstante ENV está vazia." \
-        "\nPor favor, especificar Ambiente: (prod, dev, qa)." \
+  raise "\nENV constant is empty." \
+        "\nPlease specify Environment: (prod, dev, qa)." \
         "\nEx.:" \
         "\n  $ cucumber ENV=qa" \
-        "\n    ou" \
+        "\n    or" \
         "\n  $ cucumber -p qa" \
         "\n\n"
 end
 
-## Definiçoes de Navegador
-# escolhido em cucumber.yml
+## Web Browser Settings
+# chosen in the cucumber.yml file
 # chrome, chrome_headless
 SELECTED_BROWSER = ENV['BROWSER']
 case SELECTED_BROWSER
 when nil
-  raise "\nConstante BROWSER está vazia." \
-        "\nPor favor, especificar Navegador: (chrome, chrome_headless, firefox ou firefox_headless)." \
+  raise "\nBROWSER constant is empty." \
+        "\nPlease specify Web Browser: (chrome, chrome_headless, firefox ou firefox_headless)." \
         "\nEx.:" \
         "\n  $ cucumber BROWSER=chrome_headless" \
-        "\n    ou" \
+        "\n    or" \
         "\n  $ cucumber -p chrome_headless" \
         "\n\n"
 when 'chrome'
@@ -104,18 +104,18 @@ BASE_URL        = (!ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url'])
 SCREENSHOT_PATH = 'reports/screenshots/'
 REPORT_PATH     = 'reports/report-builder/'
 
-## Verificacao da BASE_URL
+## BASE_URL check
 if BASE_URL.blank? || BASE_URL.eql?('/')
-  raise "\nConstante BASE_URL está vazia." \
-        "\nPor favor, especificar a 'base_url' no arquivo de Ambiente: (prod, dev, qa)." \
+  raise "\nBASE_URL constant is empty." \
+        "\nPlease specify the 'base_url' in the Environment file: (prod, dev, qa)." \
         "\nEx.:" \
         "\n  features/support/config/environments.yml" \
-        "\n    ou na execucao" \
-        "\n  $ cucumber URL=http://url-do-ambiente.testes" \
+        "\n    or in execution" \
+        "\n  $ cucumber URL=http://environment-url.test" \
         "\n\n"
 end
 
-## Helpers
+## Loading Helpers
 Dir[File.join(
   File.dirname(__FILE__), '/helpers/*.rb'
 )
@@ -123,16 +123,16 @@ Dir[File.join(
   require_relative file
 end
 
-## Pages
+## Loading Pages
 Dir[File.join(
   File.dirname(__FILE__), '/pages/*.rb'
 )].sort.each do |file|
   require file
 end
 
-## Execucao dos testes
+## Test execution
 Capybara.configure do |config|
-  config.default_driver = @driver ## Variavel para definissão de Browser
-  config.default_max_wait_time = 5 ## Time global de espera
+  config.default_driver = @driver   ## Variables for definition the web Browser
+  config.default_max_wait_time = 5  ## overall waiting time
   config.app_host = BASE_URL
 end

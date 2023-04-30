@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Helper de ajuda aos steps
+# to help with the steps
 def screenshot_name(name_screen)
   data_e_hora = Time.now.strftime('%Y-%m-%d_-_%H-%M-%S-%L')
   foto = if name_screen

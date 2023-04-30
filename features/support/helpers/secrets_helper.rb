@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Helper de load de secrets => Pode ser substituido pelo AWS Secret Manager
+# Helper for reading secrets => Can be replaced by AWS Secret Manager
 class SecretsHelper
   def secrets
     data = File.read(

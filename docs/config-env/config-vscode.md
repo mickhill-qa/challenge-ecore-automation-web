@@ -1,6 +1,6 @@
-# Configurar VS Code
+# Config VS Code
 
-Na loja de extensões do VS Code procure e instale os seguintes plugins:
+In the VS Code extension store, search for and install the following plugins:
 
 ```text
 Ruby
@@ -40,15 +40,15 @@ vscode-icons
 
 ---
 
-## Depois de [Instalar o Bundler](install-bundler.md) e as extensões acima
+## After [installing Bundler](install-bundler.md) and above extensions
 
-Abra a pasta deste projeto no terminal e altere o **Gemfile** execute o comando:
+Open the project folder in the terminal and change the **Gemfile** by running the command:
 
 ```bash
 bundle config set --local gemfile Gemfile.local
 ```
 
-### Enseguida baixe novamente as dependências
+**After that, download the dependencies again.**
 
 ```bash
 bundle install

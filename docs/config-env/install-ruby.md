@@ -1,104 +1,113 @@
-# Instalar Ruby
+# Install Ruby 2.7
 
 ## **Windows**
 
-Para instalar o Ruby vamos até o site: [RubyInstaller.org / Downloads](https://rubyinstaller.org/downloads/); Baixe o instalador com DevKIT da versão desejada, depois é só *"Next, Next, Install e Finish"*.
+To install Ruby, go to the site: [RubyInstaller.org / Downloads](https://rubyinstaller.org/downloads/);
 
-Em seguida um **Command Prompt** será aberto: Pressione *Enter* e espere finalizar.
+Download the installer with DevKIT version 2.7, then just *"Next, Next, Install and Finish"*.
+
+Then the **Command Prompt** will open: Press *Enter* and wait for it to finish.
 
 ---
 
 ## **Linux**
 
-Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*).
+For Ruby installation we are going to use **RVM**(*Ruby Version Manager*).
 
 - **[Install RVM](https://rvm.io/rvm/install)**:
 
-  - Abra o terminal e Instale as chaves GPG usadas para verificar o pacote de instalação executando os seguintes comandos:
+  - Open the terminal and Install the GPG keys used to verify the installation package by running the following commands:
 
       ```bash
       sudo apt install gnupg2
       ```
 
       ```bash
-      command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+      gpg2 --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
       ```
 
+  - Then install **RVM** by running the following command:
+
       ```bash
-      command curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+      \curl -sSL https://get.rvm.io | bash
       ```
-
-  - Em seguida instale o **RVM** executando o seguinte comando:
-
+  - And **Install** Ruby 2.7 already set as **default**:
+  
       ```bash
-      \curl -sSL https://get.rvm.io | bash -s stable --ruby
+      rvm install 2.7@global
       ```
 
 ---
 
 ## **MacOS**
 
-Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*) e algumas outras dependências como o **Xcode** e **Homebrew** -> **Wget**.
+For Ruby installation we are going to use **RVM**(*Ruby Version Manager*) and some other dependencies like **Xcode** and **Homebrew** -> **Wget**.
 
 - **[Install Xcode](https://apps.apple.com/br/app/xcode/id497799835?mt=12)**:
-  - Abra a *App Store*, procure  e instale o "Xcode";
-  - Após a instalação, *Abra o Xcode e Aceite os Termos*.
-  - Em seguida, abra o terminal e execute o seguinte comando:
+  - Open the *App Store*, search and install "Xcode";
+  - After installation, *Open Xcode and Accept the Terms of Agreement*.
+  - Then open the terminal and run the following command:
 
       ```bash
       xcode-select --install
       ```
 
 - **[Install Homebrew](https://brew.sh/)** (Wget):
-  - Abra o Site do "Homebrew" e *siga as instruções de instalação*;
-  - Após a instalação, abra o terminal e instale o "wget" com o seguinte comando:
+  - Open the "Homebrew" Site and *follow the installation instructions*; 
+  - After installation, open the terminal and install "wget" with the following command:
 
       ```bash
       brew install wget
       ```
 
 - **[Install RVM](https://rvm.io/rvm/install)**:
-  - Abra o terminal e instale o **RVM** executando o seguinte comando:
+  - Open the terminal and install **RVM** by running the following command:
 
       ```bash
-      \curl -sSL https://get.rvm.io | bash -s stable --ruby
+      \curl -sSL https://get.rvm.io | bash
+      ```
+    
+  - And **Install** Ruby 2.7 already set as **default**:
+
+      ```bash
+      rvm install 2.7@global
       ```
 
 ---
 
-## Como usar o RVM? *(Linux e MacOS)*
+## How to use RVM? *(Linux our MacOS)*
 
-- **Visualizar** as versões do Ruby instaladas:
+- View installed Ruby versions:
 
     ```bash
     rvm list
     ```
   
-- **Visualizar** outras versões do Ruby **disponíveis para Instalação**:
+- View other versions of Ruby available for Installation:
 
     ```bash
     rvm list known
     ```
   
-- **Instalar** outra versão do Ruby:
+- Install another version of Ruby:
 
     ```bash
     rvm install 2.7
     ```
   
-- **Instalar** outra versão do Ruby e já **definir como padrão**:
+- Install another version of Ruby and already set as default:
 
     ```bash
     rvm install 2.7@global
     ```
   
-- **Trocar** a versão padrão instalada do Ruby:
+- Change the installed default version of Ruby:
 
     ```bash
     rvm use 2.7 --default
     ```
   
-- **Remover** uma versão instalada do Ruby:
+- Removing an installed version of Ruby:
 
     ```bash
     rvm remove ruby-3

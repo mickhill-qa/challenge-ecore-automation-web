@@ -13,15 +13,14 @@
 
 # challenge-ecore-automation-web
 
-[//]: # (## Business Feature)
+### Business Feature
+- [Requirement PDF](docs/Quality_Assurance_-_Test_Automation_Assessment.pdf)
 
-[//]: # ()
-[//]: # (### **Site Google**)
+### **Features Automated**
+- [Login](features/specs/login.feature)
+- [Invoice details](features/specs/invoice_details.feature)
 
-[//]: # ()
-[//]: # (- [/google_pesquisa]&#40;features/specs/google_pesquisa.feature&#41;)
-
-## Estrutura do projeto
+## Project Structure
 
 [![Ruby Version][ruby-image]][ruby-url]
 [![Capybara Version][capybara-image]][capybara-url]
@@ -58,36 +57,37 @@
 
 ---
 
-## Configurar Ambiente
+## Configuring Environment
 
-Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
+We assume that you already ***have Ruby available in the terminal***, if you don't, follow a step by step.
 
-- [Instalar Ruby](docs/config-env/install-ruby.md)
+- [Install Ruby 2.7](docs/config-env/install-ruby.md)
 
-Instale e configure uma IDE com o **AWS toolkit plugin** para possibilitar o uso do SecretsMenager para guardar as massas de testes do projeto.
+Now you will need **WebDriver** to use Web Browser and **bundler** to download ruby project package dependencies in ***"[Gemfile](Gemfile)"*** file.  
 
-- [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
-  
-Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.
+- [Install WebDriver](docs/config-env/install-webdriver.md)
+- [Install Bundler](docs/config-env/install-bundler.md)
 
-- [Instalar WebDriver](docs/config-env/install-webdriver.md)
-- [Instalar Bundler](docs/config-env/install-bundler.md)
+To develop locally we recommend using VS Code with some plugins:
 
-Para desenvolver localmente recomendamos usar o VS Code com alguns plugins:
+- [Config VS Code](docs/config-env/config-vscode.md)
 
-- [Configurar VS Code](docs/config-env/config-vscode.md)
+Install and configure an IDE with the "**[AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html)**" to be able to use SecretsManager to store data masses of the project tests.
+
+- **[VSCode](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html)**
+- **[RubyMine](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/setup-toolkit.html)**
 
 ---
 
-## Executar Testes
+## Run Tests
 
-Para executar os testes localmente abra a pasta do projeto no terminal e execute o comando:
+To run the tests locally, open the project folder in the terminal and run the command:
 
 ```bash
 cucumber
 ```
 
-Ou para um cenário específico:
+Or to run a specific test tag:
 
 ```bash
 cucumber -t @myTag
@@ -95,31 +95,31 @@ cucumber -t @myTag
 
 ---
 
-## Alterar Ambientes de Execução
+## Change Execution Environments
 
-Por padrão os testes irão rodar usando a url de **qa** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
+By default the tests will run in the **QA** environment according to the "**[environments.yml](features/support/config/environments.yml)**" file.
 
-Os ambiente disponíveis são:
+Environments available for configuration:
 
 - dev
 - qa
 - prod
 
-Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal:
+To change the environment at runtime, add the "**ENV**" parameter in the terminal:
 
 ```bash
 cucumber ENV=dev
 ```
 
-Para alterar o padrão vá até o arquivo "**[cucumber.yml](cucumber.yml)**" e altere a linha 4:
+To change the default environment, go to the "**[cucumber.yml](cucumber.yml)**" file and change line 4:
 
 ```text
 default: (...) -p qa
 ```
 
 ---
-Caso queira apontar para uma **URL** específica:
+If you want to point to a specific **URL**:
 
 ```bash
-cucumber URL=http://url-do-ambiente.testes
+cucumber URL=http://environment-url.test
 ```

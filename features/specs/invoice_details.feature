@@ -1,9 +1,5 @@
 @invoice_details
 Feature: Invoice details
-	# https://automation-sandbox-python-mpywqjbdza-uc.a.run.app
-	# Dado espostos no BDD
-	# BUG: Casas decimais: Deposit Now, Tax&VAT	e Total Amount
-	# BUG: [Deposit Nowt] nao tem a letra "t"
 
 	Background:
 		Given the main page loaded
