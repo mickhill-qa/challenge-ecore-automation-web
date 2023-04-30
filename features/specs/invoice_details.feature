@@ -1,7 +1,9 @@
 @invoice_details
 Feature: Invoice details
 	# https://automation-sandbox-python-mpywqjbdza-uc.a.run.app
-	# OBS.: Casas decimais
+	# Dado espostos no BDD
+	# BUG: Casas decimais: Deposit Now, Tax&VAT	e Total Amount
+	# BUG: [Deposit Nowt] nao tem a letra "t"
 
 	Background:
 		Given the main page loaded
@@ -13,7 +15,7 @@ Feature: Invoice details
 	@invoice_details_baseflow
 	Scenario: TC003 - Validate invoice details
 		Given to click the Invoice Details link for the first item presented in the screen
-		When the application shows the informations of the Invoice
+		When the application show the page Invoice Details
 		And validation the Hotel Name: "Rendezvous Hotel"
 		And validation the Invoice Date: "14/01/2018"
 		And validation the Due Date: "15/01/2018"
@@ -26,5 +28,5 @@ Feature: Invoice details
 		And validation the Total Stay Count: "1"
 		And validation the Total Stay Amount: "$150"
 		And validation the Deposit Now: "USD $20.90"
-		And validation the Tax & VAT: "USD $19.00"
+		And validation the Tax&VAT: "USD $19.00"
 		And validation the Total Amount: "USD $209.00"
