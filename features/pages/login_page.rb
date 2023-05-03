@@ -11,7 +11,7 @@ class LoginPage < SitePrism::Page
     input_username.set text
   end
 
-  def fill_inpassword(text)
+  def fill_in_password(text)
     input_password.set text
   end
 
