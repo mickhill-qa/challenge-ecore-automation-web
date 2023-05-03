@@ -13,7 +13,7 @@ When('the following field Email: {string}') do |email|
 end
 
 And('the following field Password: {string}') do |password|
-  @page_login.fill_inpassword password
+  @page_login.fill_in_password password
 end
 
 And('the click the button Login') do
